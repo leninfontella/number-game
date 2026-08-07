@@ -44,7 +44,10 @@ export function TutorialMenu() {
       >
         <Menu className="h-4 w-4" />
       </SheetTrigger>
-      <SheetContent side="left" className="w-[86vw] max-w-sm border-border bg-card">
+      <SheetContent
+        side="left"
+        className="flex flex-col w-[86vw] max-w-sm border-border bg-card max-h-screen overflow-y-auto"
+      >
         <SheetHeader>
           <SheetTitle className="text-2xl font-black uppercase tracking-wide text-primary">
             Tutorial
@@ -53,7 +56,7 @@ export function TutorialMenu() {
             Como jogar o Number Game
           </SheetDescription>
         </SheetHeader>
-        <div className="flex flex-col gap-4 px-4 pb-6">
+        <div className="flex flex-col gap-4 px-4 pb-6 overflow-y-auto flex-1">
           {steps.map((step) => (
             <div
               key={step.title}
