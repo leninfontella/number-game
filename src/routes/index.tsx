@@ -5,21 +5,21 @@ import { SplashScreen } from "@/components/game/SplashScreen";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    title: "Number Game | Adivinhe o número!",
     meta: [
-      { title: "Adivinhe o Número — Jogo de 0 a 100" },
       {
         name: "description",
-        content:
-          "Jogo mobile de adivinhação: saia do 0 e acerte os próximos números até chegar a 100. 5 tentativas e 5 segundos por palpite.",
+        content: "Jogo mobile de adivinhação.",
       },
-      { property: "og:title", content: "Adivinhe o Número — Jogo de 0 a 100" },
+      { property: "og:title", content: "Adivinhe o Número!" },
       {
         property: "og:description",
-        content: "Acerte os números sorteados e chegue a 100 ganhando pontos.",
+        content: "Acerte os números e com um pouco de sorte, ganhe pontos.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "icon", type: "image/png", href: "/public/app_icon.png" }],
   }),
   component: Index,
 });
@@ -30,7 +30,7 @@ function Index() {
 
   return (
     <>
-      <h1 className="sr-only">Number Game: adivinhe os números de 0 até 100</h1>
+      <h1 className="sr-only">Number Game: adivinhe os números.</h1>
       {playing ? (
         <NumberGame
           key={runId}

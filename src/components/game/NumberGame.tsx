@@ -1,6 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
-import { Trophy, User, Timer, Play, RotateCcw, Target, Pencil, Volume2, VolumeX, LogOut } from "lucide-react";
+import {
+  Trophy,
+  User,
+  Timer,
+  Play,
+  RotateCcw,
+  Target,
+  Pencil,
+  Volume2,
+  VolumeX,
+  LogOut,
+} from "lucide-react";
 import { Keypad } from "./Keypad";
 import { TutorialMenu } from "./TutorialMenu";
 import { sounds, setMuted } from "@/lib/sounds";
@@ -180,7 +191,7 @@ export function NumberGame({ onExit }: { onExit?: () => void }) {
   const showHitBanner = status === "reveal" && feedback === "hit";
 
   return (
-    <div className="stage-bg relative flex min-h-[100dvh] flex-col">
+    <div className="stage-bg relative flex min-h-dvh flex-col">
       <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border px-4 py-3 sm:px-6">
         <div className="flex min-w-0 items-center gap-2.5">
           <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-primary/40 bg-card text-primary">
@@ -262,7 +273,10 @@ export function NumberGame({ onExit }: { onExit?: () => void }) {
               playing ? "animate-glow-pulse" : "neon-ring"
             } ${feedback === "miss" ? "animate-shake" : ""}`}
           >
-            <span key={current} className="animate-pop text-5xl font-black tabular-nums sm:text-6xl">
+            <span
+              key={current}
+              className="animate-pop text-5xl font-black tabular-nums sm:text-6xl"
+            >
               {current}
             </span>
           </div>
@@ -281,7 +295,7 @@ export function NumberGame({ onExit }: { onExit?: () => void }) {
                     : "Adivinhe o próximo número"}
           </p>
 
-          <div className="flex min-w-[11rem] items-center justify-center gap-2 rounded-2xl border border-border bg-card px-6 py-3 neon-ring">
+          <div className="flex min-w-44 items-center justify-center gap-2 rounded-2xl border border-border bg-card px-6 py-3 neon-ring">
             <span className="text-base font-bold uppercase tracking-wide">Palpite:</span>
             <span className="text-2xl font-black tabular-nums text-primary">{guess || "—"}</span>
           </div>
@@ -373,11 +387,12 @@ export function NumberGame({ onExit }: { onExit?: () => void }) {
               Fim de jogo
             </p>
             <p className="mt-3 text-2xl font-black sm:text-3xl">
-              Você acertou <span className="text-primary">{hits}</span> números!
+              Você acertou <span className="text-primary">{hits}</span>{" "}
+              {hits === 1 ? "número" : "números"}!
             </p>
             <p className="mt-2 text-lg font-bold text-muted-foreground">
-              Placar:{" "}
-              <span className="text-foreground">{score.toLocaleString("pt-BR")}</span> pontos.
+              Ganhou <span className="text-foreground">{score.toLocaleString("pt-BR")}</span>{" "}
+              pontos.
             </p>
             <p className="mt-1 text-xs text-muted-foreground">{rounds} rodadas</p>
             <button

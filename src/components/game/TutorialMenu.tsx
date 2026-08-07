@@ -28,7 +28,10 @@ const steps = [
   {
     icon: Trophy,
     title: "4. Chegue até " + GOAL,
-    text: "Cada acerto vale pontos — e quanto mais tempo sobrando, mais pontos. O jogo termina ao alcançar o " + GOAL + ".",
+    text:
+      "Cada acerto vale pontos — e quanto mais tempo sobrando, mais pontos. O jogo termina ao alcançar o " +
+      GOAL +
+      ".",
   },
 ];
 
