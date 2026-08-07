@@ -24,7 +24,9 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://numbergame-luck.vercel.app/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "icon", type: "image/png", href: "/public/app_icon.png" }],
+    links: [
+      { rel: "icon", type: "image/png", href: "https://numbergame-luck.vercel.app/app_icon.png" },
+    ],
   }),
   component: Index,
 });
