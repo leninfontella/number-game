@@ -4,10 +4,10 @@ import { GOAL } from "@/lib/game-logic";
 
 export function SplashScreen({ onPlay }: { onPlay: () => void }) {
   return (
-    <div className="stage-bg relative flex min-h-dvh flex-col items-center justify-between px-6 py-8">
-      <header className="flex w-full items-center justify-between">
+    <div className="stage-bg relative flex min-h-dvh flex-col items-center justify-center px-6 py-8">
+      <header className="absolute top-0 left-0 right-0 flex w-full items-center justify-between p-8">
         <TutorialMenu />
-        <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">0 → {GOAL}</span>
+        {/* <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">0 → {GOAL}</span> */}
       </header>
 
       <main className="flex flex-col items-center gap-8 text-center">
