@@ -4,7 +4,6 @@ import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import path from "node:path";
 import { defineConfig } from "vite";
-import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ command }) => ({
   server: {
@@ -14,10 +13,10 @@ export default defineConfig(({ command }) => ({
   resolve: {
     alias: { "@": path.resolve(process.cwd(), "src") },
     dedupe: ["react", "react-dom", "@tanstack/react-query", "@tanstack/query-core"],
+    tsconfigPaths: true,
   },
   plugins: [
     tailwindcss(),
-    tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart({
       server: { entry: "server" },
       importProtection: {
